@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="11762" systemVersion="16D17a" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="AgC-eL-Hgc">
+    <device id="watch42" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="11508"/>
+    </dependencies>
+    <scenes>
+        <!--Interface Controller-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller id="AgC-eL-Hgc" customClass="InterfaceController" customModule="Crear_Pizzas_AW" customModuleProvider="target">
+                    <items>
+                        <label width="156" height="26" alignment="left" text="Tamaño" textAlignment="center" id="fpz-zW-hDj"/>
+                        <separator alignment="left" id="h9n-OE-YT5"/>
+                        <picker height="100" alignment="left" id="Kpa-oS-ARJ">
+                            <connections>
+                                <action selector="pickerChanged:" destination="AgC-eL-Hgc" id="9bo-yv-9MV"/>
+                            </connections>
+                        </picker>
+                        <label width="147" height="27" alignment="left" text="-" textAlignment="center" id="BRb-sc-P2p"/>
+                        <button width="1" alignment="left" title="Siguiente" id="ttG-N6-pqS">
+                            <connections>
+                                <action selector="accionCalcular" destination="AgC-eL-Hgc" id="aL7-xN-ToB"/>
+                                <segue destination="ec0-x8-B1s" kind="push" id="G7r-t0-K94"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="picker" destination="Kpa-oS-ARJ" id="z4J-aD-Wxj"/>
+                        <outlet property="valorTamaño" destination="BRb-sc-P2p" id="pHT-AW-Sg4"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="219.69230769230771" y="344.79487179487182"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController id="YCC-NB-fut">
+                    <items>
+                        <label alignment="left" text="Alert Label" id="IdU-wH-bcW"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
+                        <segue destination="4sK-HA-Art" kind="relationship" relationship="dynamicNotificationInterface" id="kXh-Jw-8B1"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="220" y="643"/>
+        </scene>
+        <!--Interface Controller-->
+        <scene sceneID="bQw-jS-lw6">
+            <objects>
+                <controller id="g3F-zH-XPt">
+                    <items>
+                        <label width="156" alignment="left" text="Pedido Realizado" textAlignment="center" id="GpI-9J-tDg"/>
+                        <button width="1" alignment="left" title="Iniciar" id="ftg-Aw-kWA">
+                            <connections>
+                                <segue destination="AgC-eL-Hgc" kind="push" id="BWV-8W-tGK"/>
+                            </connections>
+                        </button>
+                    </items>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="1230.9743589743591" y="350.89743589743591"/>
+        </scene>
+        <!--IdentificadorValor-->
+        <scene sceneID="kPB-Rv-8Ov">
+            <objects>
+                <controller identifier="IdentificadorValor" id="ec0-x8-B1s" customClass="QuesoInterfaceController" customModule="Crear_Pizzas_AW_Extension">
+                    <items>
+                        <label width="156" height="19" alignment="left" text="Queso" textAlignment="center" id="6Rh-BS-B19"/>
+                        <separator alignment="left" id="O9f-FF-1G1"/>
+                        <picker height="100" alignment="left" id="nlE-kN-uu6">
+                            <connections>
+                                <action selector="nuevoQueso:" destination="ec0-x8-B1s" id="IMA-gO-CEy"/>
+                            </connections>
+                        </picker>
+                        <label width="156" alignment="left" text="-" textAlignment="center" id="9eI-g0-Luy"/>
+                        <button width="1" alignment="left" title="Siguiente" id="BaR-oa-0o3">
+                            <connections>
+                                <action selector="obtenerQueso" destination="ec0-x8-B1s" id="eTa-5w-jRL"/>
+                                <segue destination="shD-Tz-IXY" kind="push" id="osA-fY-TDF"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="picker2" destination="nlE-kN-uu6" id="DqQ-TZ-V8D"/>
+                        <outlet property="valoraQueso" destination="9eI-g0-Luy" id="nsl-G4-fp4"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="454.20512820512823" y="344.79487179487182"/>
+        </scene>
+        <!--Identificador-->
+        <scene sceneID="Ukl-aD-RaF">
+            <objects>
+                <controller identifier="Identificador" id="shD-Tz-IXY" customClass="MasaInterfaceController" customModule="Crear_Pizzas_AW_Extension">
+                    <items>
+                        <label width="156" alignment="left" text="Masa" textAlignment="center" id="KnT-0g-BXp"/>
+                        <separator alignment="left" id="l6E-u1-Swz"/>
+                        <picker height="100" alignment="left" id="HAZ-hT-fSf">
+                            <connections>
+                                <action selector="nuevaMasa:" destination="shD-Tz-IXY" id="mrI-ME-w9q"/>
+                            </connections>
+                        </picker>
+                        <label width="156" height="19" alignment="left" text="-" textAlignment="center" id="n3c-Q1-EPJ"/>
+                        <button width="1" alignment="left" title="Siguiente" id="XBc-DB-ngn">
+                            <connections>
+                                <segue destination="Vfu-j5-ifP" kind="push" id="b90-QQ-Scm"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="masa" destination="n3c-Q1-EPJ" id="sct-oI-TTM"/>
+                        <outlet property="picker3" destination="HAZ-hT-fSf" id="zmR-4y-8Ji"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="669.53846153846155" y="353.51282051282055"/>
+        </scene>
+        <!--IdentificadorSSS-->
+        <scene sceneID="5Sh-Gl-e01">
+            <objects>
+                <controller identifier="IdentificadorSSS" id="Vfu-j5-ifP" customClass="IngredientesInterfaceController" customModule="Crear_Pizzas_AW_Extension">
+                    <items>
+                        <label width="156" alignment="left" text="Ingredientes" textAlignment="center" id="2UM-Dx-cQC"/>
+                        <separator alignment="left" id="hd0-tp-7tD"/>
+                        <picker height="100" alignment="left" id="Zuw-X3-Eip">
+                            <connections>
+                                <action selector="nuevoIngrediente:" destination="Vfu-j5-ifP" id="1Wg-be-Z1m"/>
+                            </connections>
+                        </picker>
+                        <label width="156" alignment="left" text="-" textAlignment="center" id="yS2-tU-KuS"/>
+                        <button width="1" alignment="left" title="Siguiente" id="Dp8-hu-VXn">
+                            <connections>
+                                <action selector="obtenerIngrediente" destination="Vfu-j5-ifP" id="rgC-9h-5G4"/>
+                                <segue destination="6HK-mZ-muU" kind="push" id="Oxo-Dh-PTC"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="ingrediente" destination="yS2-tU-KuS" id="Ag5-9g-pLh"/>
+                        <outlet property="picker4" destination="Zuw-X3-Eip" id="d5A-of-R1Y"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="896.20512820512829" y="350.89743589743591"/>
+        </scene>
+        <!--IdentificadorAAA-->
+        <scene sceneID="dXR-X6-yr3">
+            <objects>
+                <controller identifier="IdentificadorAAA" id="6HK-mZ-muU" customClass="PedidoInterfaceController" customModule="Crear_Pizzas_AW_Extension">
+                    <items>
+                        <label width="156" alignment="left" text="Pedido" textAlignment="center" id="PMd-B9-V3N"/>
+                        <separator alignment="left" id="ztj-bC-Q8h"/>
+                        <button width="1" alignment="left" title="Ver pedido" id="YfT-mg-9OQ">
+                            <connections>
+                                <action selector="ver" destination="6HK-mZ-muU" id="OPz-C3-gdn"/>
+                            </connections>
+                        </button>
+                        <label width="156" alignment="left" text="-" textAlignment="center" numberOfLines="0" id="xTa-Bh-ieI"/>
+                        <button width="1" alignment="left" title="Reiniciar pedido" id="fYE-w5-ch0">
+                            <connections>
+                                <segue destination="AgC-eL-Hgc" kind="push" id="ibZ-5F-UvQ"/>
+                            </connections>
+                        </button>
+                        <button width="1" height="38" alignment="left" title="Realizar pedidos" id="Mnp-PP-8MI">
+                            <connections>
+                                <segue destination="g3F-zH-XPt" kind="push" id="yje-UA-BqH"/>
+                            </connections>
+                        </button>
+                    </items>
+                    <connections>
+                        <outlet property="todo" destination="xTa-Bh-ieI" id="uvc-ha-lBY"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="726.20512820512829" y="-30.07692307692308"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="ZPc-GJ-vnh">
+            <objects>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="Crear_Pizzas_AW" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="468" y="643"/>
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="BWV-8W-tGK"/>
+    </inferredMetricsTieBreakers>
+</document>
